@@ -11,7 +11,6 @@
 
 namespace Black\Bundle\CommonBundle\Traits;
 
-use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
@@ -100,16 +99,6 @@ trait ImageTrait
     }
 
     /**
-     * Return the absolute upload dir
-     *
-     * @return string
-     */
-    protected function getUploadRootDir()
-    {
-        return __DIR__ . '/../../../../../../../web/' . $this->getUploadDir();
-    }
-
-    /**
      * Return the upload dir
      *
      * @return string
@@ -117,5 +106,15 @@ trait ImageTrait
     protected function getUploadDir()
     {
         return 'uploads';
+    }
+
+    /**
+     * Return the absolute upload dir
+     *
+     * @return string
+     */
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../../../../web/' . $this->getUploadDir();
     }
 } 
